@@ -6,9 +6,10 @@
         </div>
     </div>
 
+
     <div fxFlex>
         <mat-grid-list cols="2" rowHeight="200px">
-            <mat-grid-tile *ngFor="let dish of dishes"> 
+            <mat-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)"> 
                 <img matListAvatar src="{{dish.image}}" alt="{{dish.name}}">
                 <!-- <p matLine><span>{{dish.description}}</span></p> -->
                 <mat-grid-tile-footer>
@@ -18,7 +19,7 @@
         </mat-grid-list>
     </div>
 
-    <div fxFlex *ngIf="selectedDish">
+    <!-- <div fxFlex *ngIf="selectedDish">
         <mat-card>
             <mat-card-header>
                 <mat-card-title>
@@ -33,6 +34,15 @@
                 <button mat-button>Like</button>
                 <button mat-button>Share</button>
             </mat-card-actions>
-        </mat-card>
-    </div>
+        </mat-card> 
+    </div> -->
+    <app-dishdetail [dish]="selectedDish"></app-dishdetail>
 </div>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $("p").click(function(){
+        $("#hide").show();
+    })
+</script> -->
+<!-- 
+<i class="fas fa-comment-alt fa-lg" id="chat" style="color: blue; font-size: 40px;" position="fixed"></i> -->
