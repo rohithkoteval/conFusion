@@ -9,7 +9,7 @@
 
     <div fxFlex>
         <mat-grid-list cols="2" rowHeight="200px">
-            <mat-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)"> 
+            <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
                 <img matListAvatar src="{{dish.image}}" alt="{{dish.name}}">
                 <!-- <p matLine><span>{{dish.description}}</span></p> -->
                 <mat-grid-tile-footer>
@@ -36,7 +36,7 @@
             </mat-card-actions>
         </mat-card> 
     </div> -->
-    <app-dishdetail [dish]="selectedDish"></app-dishdetail>
+    <!-- <app-dishdetail [dish]="selectedDish"></app-dishdetail> -->
 </div>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
