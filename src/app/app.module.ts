@@ -11,6 +11,9 @@ import {  MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
@@ -50,6 +53,7 @@ import { LoginComponent } from './login/login.component';
     MatToolbarModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
@@ -58,6 +62,8 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     FlexLayoutModule
   ],
   providers: [
