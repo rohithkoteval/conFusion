@@ -40,7 +40,7 @@ import { ProcessHttpMsgService } from './Services/process-http-msg.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 
-import { baseURL } from './shared/baseURL';
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [

@@ -67,11 +67,11 @@
             </mat-list>
         </mat-card-content>
     </mat-card>
-    <mat-card >
+    <mat-card>
         <div>
             <p>{{commentForm.value.comment }} </p> 
             <p id="rate">{{commentForm.value.rating|number }}</p>
-            <p>--{{commentForm.value.author }} {{myDate|date}}</p>
+            <p>--{{commentForm.value.author }} {{commentForm.value.date|date}}</p>
         </div>
         <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
             <p>
@@ -98,13 +98,13 @@
             <button type="submit" [disabled]="commentForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
         </form>        
     </mat-card>
-    <div fxFlex [hidden]="dish || errMsg">
+    <!-- <div fxFlex [hidden]="dish || errMsg">
         <mat-spinner></mat-spinner>
         <h4>Loding ... Please wait</h4>
     </div>
     <div fxFlex *ngIf="errMsg">
         <h2>Error</h2>
         <h4 text-danger>{{errMsg}}</h4>
-    </div>
+    </div> -->
   </div>
 </div>
