@@ -13,6 +13,7 @@ import { DISHES } from '../shared/dishes'
 export class MenuComponent implements OnInit {
 
   dishes:Dish[];
+  errMsg:string;
 
   // selectedDish:Dish;
 
@@ -20,7 +21,8 @@ export class MenuComponent implements OnInit {
     @Inject('BaseURL') public baseURL) { }
 
   ngOnInit(): void {
-    this.dishService.getDishes().subscribe((dishes)=>this.dishes=dishes);
+    this.dishService.getDishes().subscribe((dishes)=>this.dishes=dishes,
+    errmsg=> this.errMsg=<any>errmsg);
   }
 
   // onSelect(dish: Dish) {

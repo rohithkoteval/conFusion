@@ -20,9 +20,13 @@
             </mat-grid-tile>
         </mat-grid-list>
     </div>
-    <div fxFlex [hidden]="dishes">
+    <div fxFlex [hidden]="dishes || errMsg">
         <mat-spinner></mat-spinner>
         <h4>Loding ... Please wait</h4>
+    </div>
+    <div fxFlex *ngIf="errMsg">
+        <h2>Error</h2>
+        <h4 text-danger>{{errMsg}}</h4>
     </div>
 
     <!-- <div fxFlex *ngIf="selectedDish">

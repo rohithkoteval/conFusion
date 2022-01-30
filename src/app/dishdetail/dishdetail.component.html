@@ -98,5 +98,13 @@
             <button type="submit" [disabled]="commentForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
         </form>        
     </mat-card>
+    <div fxFlex [hidden]="dish || errMsg">
+        <mat-spinner></mat-spinner>
+        <h4>Loding ... Please wait</h4>
+    </div>
+    <div fxFlex *ngIf="errMsg">
+        <h2>Error</h2>
+        <h4 text-danger>{{errMsg}}</h4>
+    </div>
   </div>
 </div>

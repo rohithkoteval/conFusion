@@ -24,6 +24,7 @@ export class DishdetailComponent implements OnInit {
   commentForm:FormGroup;
   comment:Comment;
   myDate:Date;
+  errMsg:string;
   @ViewChild('fform') commentFormDirective:NgForm;
 
   constructor(private fb:FormBuilder,private dishservice: DishService,
@@ -35,7 +36,8 @@ export class DishdetailComponent implements OnInit {
     ngOnInit() {
       this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
       this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
+      errmsg=> this.errMsg=<any>errmsg);
     // let id = i.toString();
     // this.dishservice.getDish(id).subscribe(dish=>this.dish=dish);
       this.myDate
