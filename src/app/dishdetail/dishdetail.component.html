@@ -32,7 +32,7 @@
                     <h3>{{dish.name | uppercase}}</h3>
                 </mat-card-title>
             </mat-card-header>
-            <img mat-card-image src="{{dish.image}}" alt="{{dish.name}}">
+            <img mat-card-image src="{{BaseURL + dish.image}}" alt="{{dish.name}}">
             <mat-card-content>
                 <p>{{dish.description}}</p>
             </mat-card-content>
@@ -68,6 +68,11 @@
         </mat-card-content>
     </mat-card>
     <mat-card >
+        <div>
+            <p>{{commentForm.value.comment }} </p> 
+            <p id="rate">{{commentForm.value.rating|number }}</p>
+            <p>--{{commentForm.value.author }} {{myDate|date}}</p>
+        </div>
         <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
             <p>
                 <mat-form-field class="half-width">
@@ -80,7 +85,7 @@
             <p>
                 <!-- <mat-slider min="1" max="5" step="1" value="2"></mat-slider> -->
                 <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="1" step="1" min="0" max="5"
-                    aria-label="units"></mat-slider>
+                    aria-label="units" formControlName="rating"></mat-slider>
             </p>
             <p>
                 <mat-form-field class="full-width">
@@ -94,5 +99,4 @@
         </form>        
     </mat-card>
   </div>
-
 </div>

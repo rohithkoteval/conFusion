@@ -11,7 +11,8 @@
         <mat-grid-list cols="2" rowHeight="200px">
             <!-- <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]"> -->
             <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
-                <img matListAvatar src="{{dish.image}}" alt="{{dish.name}}">
+                <!-- <img matListAvatar src="{{BaseURL+dish.image}}" alt="{{dish.name}}"> -->
+                <img height="200px" src="{{ baseURL + dish.image }}" alt={{dish.name}}>
                 <!-- <p matLine><span>{{dish.description}}</span></p> -->
                 <mat-grid-tile-footer>
                     <h1>{{dish.name | uppercase}}</h1>
