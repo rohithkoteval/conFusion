@@ -19,5 +19,6 @@ export class ProcessHttpMsgService {
     }
 
     return throwError(errMsg);
+    //return throwError(() => new Error(errMsg));
   }
 }

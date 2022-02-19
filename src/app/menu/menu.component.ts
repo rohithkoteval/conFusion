@@ -21,8 +21,7 @@ export class MenuComponent implements OnInit {
     @Inject('BaseURL') public baseURL) { }
 
   ngOnInit(): void {
-    this.dishService.getDishes().subscribe((dishes)=>this.dishes=dishes,
-    errmsg=> this.errMsg=<any>errmsg);
+    this.dishService.getDishes().subscribe((dishes)=>this.dishes=dishes);
   }
 
   // onSelect(dish: Dish) {
